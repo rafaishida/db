@@ -18,13 +18,32 @@ SELECT * FROM cargos order by id desc limit 10;
 ```
 
 # PAGINAÇÃO
-Técnica comum, quando a quatidade de items a ser visualizado
-ultrapassa o limite de uma página, divide-se a informação em várias páginas. Determinado sistema apresenta apenas 5 itens por página. Para apresentar os 10 primeiros items, serão necessárias no mínimo duas páginas, como ficaria essa consulta no banco de dados?
+Uma empresa de e-commerce não disponibiliza em uma única página todos os itens a venda.
+A prática mais comum é limitar a quantidade de itens por página, por ex: 20 itens. Para o usuário
+visualizar os próximos 20 itens é necessário uma ação como, navegar para outra página.
+A nível de banco de dados carregar todo o catálogo de itens e mostrar apenas 20 seria um imenso desperdício de recursos computacionais.
 
-ex: offset -
+ex: mostrar 5 cargos pulando os 3 primeiros.
 ```sql
-SELECT * FROM cargos limit 5 offset 4;
-SELECT * FROM cargos limit 4, 5; #inverte...
+SELECT * FROM cargos limit 5 offset 3;
+SELECT * FROM cargos limit 3, 5; # consulta equivalente, sem a palavra offset
+```
+
+# LIMIT no DELETE
+É possível restringir a quantidade de um delete com o limit.
+"If the DELETE statement includes an ORDER BY clause, rows are deleted in the order specified by the clause. This is useful primarily in conjunction with LIMIT."
+https://dev.mysql.com/doc/refman/5.6/en/delete.html
+
+ex: deleta o funcionário com o maior salário.
+```sql
+DELETE FROM funcionarios ORDER BY salario DESC LIMIT 1;
+```
+# LIMIT no UPDATE
+É possível restringir a quantidade de linhas afetadas num update.
+
+ex: atualiza o salário de quem ganha mais para o valor 1000.
+```sql
+UPDATE funcionarios SET salario = 1000 ORDER BY salario DESC LIMIT 1;
 ```
 
 # Exercícios, utilizando LIMIT:
