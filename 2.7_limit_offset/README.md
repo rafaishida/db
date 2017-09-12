@@ -1,6 +1,6 @@
 # LIMIT
-Restringe a quantidade de linhas de uma consulta. Considerando a performance da aplicação/banco,
-não é uma boa prática realizar uma consulta que retorna uma grande quantidade de linhas do banco de dados e apenas mostrar parte dessas linhas. É mais otimizado buscar no banco apenas a informação que será apresentada.
+Função principal é restringir a quantidade de linhas de uma consulta. 
+Considerando a performance da aplicação/banco, não é uma boa prática realizar uma consulta que retorna uma grande quantidade de linhas do banco de dados e apenas mostrar parte dessas linhas. É mais otimizado buscar no banco apenas a informação que será apresentada.
 
 ex: retorne todos os campos da tabela "cargo", porém limite a apenas 1 linha.
 ```sql
