@@ -53,3 +53,5 @@ UPDATE funcionarios SET salario = 1000 ORDER BY salario DESC LIMIT 1;
 1. Quem é o funcionário com o maior salário?
 2. Quem é o funcionário com o menor salário?
 3. Quem é o funcionário e cargo, que possui o 2º maior salário?
+4. Atualize o cargo do funcionario com o maior salario para DBA nivel 2.
+5. Delete o funcionario com o 2 menor salario.
