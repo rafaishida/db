@@ -55,3 +55,4 @@ UPDATE funcionarios SET salario = 1000 ORDER BY salario DESC LIMIT 1;
 3. Quem é o funcionário e cargo, que possui o 2º maior salário?
 4. Atualize o cargo do funcionario com o maior salario para DBA nivel 2.
 5. Delete o funcionario com o 2 menor salario.
+6. Considerando um sistema que mostra 3 funcionários por página (paginação), como seria consulta para mostrar a 3 página de funcionários?
